@@ -19,12 +19,8 @@
         <div class="container-fluid">
             <div class="navbar-header">
                   <a class="navbar-brand" href="{% url 'djangoapp:index' %}">Home</a>
+                  <a class="navbar-brand" href="{% url 'djangoapp:about' %}">About us </a>
             </div>
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="{% url 'djangoapp:about' %}">About us <span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
             <!-- user details -->
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
@@ -49,7 +45,19 @@
         </div>
     </nav>
     <!--Add a dealer table here -->
-
+    <footer>
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'djangoapp:index' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'djangoapp:contact' %}">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'djangoapp:about' %}">About Us</a>
+            </li>
+          </ul>
+    </footer>
     </body>
 
 </html>
