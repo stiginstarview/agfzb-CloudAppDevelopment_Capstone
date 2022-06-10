@@ -48,7 +48,6 @@ function getDbs(cloudant) {
           })
  }
  
-                        
  /*
  Sample implementation to get all the records in a db.
  */
@@ -63,4 +62,18 @@ function getDbs(cloudant) {
                 reject({ err: err });
              });
          })
- }
+}
+
+// Get all dealerships
+function getDealerships(cloudant, dbname) {
+    return new Promise((resolve, reject) => {
+        cloudant.getAllRecords({ db: dbname, includeDocs: true, limit: 10 })            
+        .then((result)=>{
+          resolve({result:result.result.rows});
+        })
+        .catch(err => {
+           console.log(err);
+           reject({ err: err });
+        });
+    })
+}
