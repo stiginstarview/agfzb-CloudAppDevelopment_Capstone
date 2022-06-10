@@ -25,7 +25,7 @@ def about(request):
 def contact(request):
     return render(request,'djangoapp/contact.html')
 
-# Create a `login_request` view to handle sign in request
+# handle's sign in request
 def login_request(request):
     context = {}
     if request.method == "POST":
@@ -41,7 +41,7 @@ def login_request(request):
     else:
         return render(request, 'djangoapp/user_login_bootstrap.html', context)
 
-# Create a `logout_request` view to handle sign out request
+# handle's sign out request
 def logout_request(request):
     logout(request)
     return redirect('djangoapp:index')
